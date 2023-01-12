@@ -15,9 +15,11 @@ inputs:
     description: 'osv-scanner architecture'
     required: false
     default: 'amd64'
-runs:
-  using: 'docker'
-  image: 'ghcr.io/google/osv-scanner:${{ inputs.version }}-${{ inputs.arch }}'
-  args:
-    - '--skip-git'
-    - ${{ inputs.to-scan }}
+
+jobs:    
+  runs:
+    using: 'docker'
+    image: 'ghcr.io/google/osv-scanner:${{ inputs.version }}-${{ inputs.arch }}'
+    args:
+      - '--skip-git'
+      - ${{ inputs.to-scan }}
