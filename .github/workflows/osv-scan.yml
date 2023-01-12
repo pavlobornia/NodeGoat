@@ -1,4 +1,6 @@
 name: 'osv-scanner'
+on: [push, pull_request]
+
 description: 'Scans your directory against the OSV database'
 inputs:
   to-scan:
